@@ -14,19 +14,16 @@ RSpec.describe Course do
     it 'has attributes' do
       expect(@course.name).to eq("Calculus") 
       expect(@course.capacity).to eq(2)
+      expect(@course.students).to eq([])
+    end
+  end  
+  describe '#full?' do
+    it 'tells you if the course is full' do
+      expect(@course.full?).to eq(false)
     end
   end
 end
 
-
-# pry(main)> course = Course.new("Calculus", 2)    
-# # => #<Course:0x00007fa0a69be328...>
-# pry(main)> course.name
-# # => "Calculus"
-# pry(main)> course.capacity
-# # => 2
-# pry(main)> course.students
-# # => []
 # pry(main)> course.full?
 # # => false
 # pry(main)> student1 = Student.new({name: "Morgan", age: 21})
