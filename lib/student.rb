@@ -14,9 +14,6 @@ class Student
   end
 
   def average
-    score_total = @scores.sum do |score|
-      score.to_f
-    end
-    score_total / @scores.count
+    scores.sum.to_f / scores.count
   end
 end
