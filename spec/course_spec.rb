@@ -21,6 +21,9 @@ RSpec.describe Course do
   describe '#full?' do
     it 'tells you if the course is full' do
       expect(@course.full?).to eq(false)
+      @course.enroll(@student1)
+      @course.enroll(@student2)
+      expect(@course.full?).to eq(true)
     end
   end
   describe '#enroll' do
@@ -32,9 +35,6 @@ RSpec.describe Course do
   end
 end
 
-# pry(main)> course.enroll(student1)    
-# pry(main)> course.enroll(student2)    
-# pry(main)> course.students
-# # => [#<Student:0x00007fa0a80ae588...>, #<Student:0x00007fa0a814f4d8...>]
+
 # pry(main)> course.full?
 # # => true
