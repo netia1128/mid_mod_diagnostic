@@ -12,4 +12,11 @@ class Student
   def log_score(score)
     @scores << score
   end
+
+  def average
+    score_total = @scores.sum do |score|
+      score.to_f
+    end
+    score_total / @scores.count
+  end
 end

@@ -22,4 +22,11 @@ RSpec.describe Student do
       expect(@student.scores).to eq([89, 78])
     end
   end
+  describe '#average' do
+    it 'allows you to see the average of all the scores' do
+      @student.log_score(89)
+      @student.log_score(78)
+      expect(@student.average).to eq(83.5)
+    end
+  end
 end
